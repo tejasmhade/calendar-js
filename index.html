@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propjini Date Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="input-wrapper">
+        <label>Date & Time Picker (Both)</label>
+        <input type="text" id="datetime-both" class="date-display-input" readonly placeholder="Pick date and time">
+    </div>
+
+    <div class="input-wrapper">
+        <label>Date Only Picker</label>
+        <input type="text" id="date-only" class="date-display-input" readonly placeholder="Pick a date">
+    </div>
+
+    <div class="input-wrapper">
+        <label>Time Only Picker</label>
+        <input type="text" id="time-only" class="date-display-input" readonly placeholder="Pick a time">
+    </div>
+
+    <div class="input-wrapper">
+        <label>Date & Time (No Past)</label>
+        <input type="text" id="datetime-no-past" class="date-display-input" readonly placeholder="Pick future date and time">
+    </div>
+
+    <script src="datepicker.js"></script>
+    <script>
+        // Date and Time Both
+        new PropjiniDatePicker('datetime-both', { 
+            PickDateTimeBoth: true,
+            AllowPastDateTime: true,
+            showShortcuts: true,
+            defaultTime: '02:00 PM'
+        });
+        
+        // Date Only
+        new PropjiniDatePicker('date-only', { 
+            PickDateOnly: true,
+            AllowPastDateTime: true,
+            showShortcuts: true
+        });
+        
+        // Time Only
+        new PropjiniDatePicker('time-only', { 
+            PickTimeOnly: true,
+            AllowPastDateTime: true,
+            defaultTime: '10:00 AM'
+        });
+        
+        // Date & Time (No Past)
+        new PropjiniDatePicker('datetime-no-past', { 
+            PickDateTimeBoth: true,
+            AllowPastDateTime: false,
+            showShortcuts: true,
+            defaultTime: '08:00 AM'
+        });
+    </script>
+</body>
+</html>
